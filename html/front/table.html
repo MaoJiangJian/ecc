@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" href="layui/css/layui.css">
+	<script src="layui/layui.js"></script>
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="activeForm.js"></script>
+	<script src="layer/layer.js"></script>
+
+
+</head>
+
+<body>
+	<table width="60%" border="1" align="center" cellpadding="0" cellspacing="0" class="layui-table">
+		<tbody>
+			<thead>
+				<tr>
+					<td height="60" colspan="7" align="center" style="font-size: 1.6em;">
+						浙江工商大学杭州商学院2021年大学生电子商务竞赛报名表（预览）</td>
+				</tr>
+			</thead>
+		</tbody>
+		<tbody>
+			<tr>
+				<td width="105" height="50" align="center">作品名称</td>
+				<td height="50" colspan="6" align="center" id="title" name="work1">&nbsp;</td>
+			</tr>
+		</tbody>
+		<tbody>
+			<tr>
+				<td width="105" height="50" align="center">团队名称</td>
+				<td height="50" colspan="3" align="center" id="team_name">&nbsp;</td>
+				<td width="136" height="50" align="center">电子邮箱</td>
+				<td height="50" colspan="2" align="center" id="email">&nbsp;</td>
+			</tr>
+		</tbody>
+		<tbody>
+			<tr>
+				<td width="105" height="50" align="center">队长姓名</td>
+				<td height="50" colspan="3" align="center" id="cap_name">&nbsp;</td>
+				<td width="136" height="50" align="center">联系方式</td>
+				<td height="50" colspan="2" align="center" id="phone">&nbsp;</td>
+			</tr>
+		</tbody>
+		<tbody>
+			<tr>
+				<td width="105" height="50" align="center">学院</td>
+				<td height="50" colspan="3" align="center" id="college_name">&nbsp;</td>
+				<td width="136" height="50" align="center">班级</td>
+				<td height="50" colspan="2" align="center" id="class_name">&nbsp;</td>
+			</tr>
+		</tbody>
+		<tbody>
+			<tr>
+				<td width="105" height="50" align="center">指导老师1</td>
+				<td height="50" colspan="3" align="center" id="tec_name1">&nbsp;</td>
+				<td width="136" height="50" align="center">联系方式1</td>
+				<td height="50" colspan="2" align="center" id="tec_phone1">&nbsp;</td>
+			</tr>
+			<tr id="tec2tr" style="display:none;">
+				<td width="105" height="50" align="center">指导老师2</td>
+				<td height="50" colspan="3" align="center" id="tec_name2">&nbsp;</td>
+				<td width="136" height="50" align="center">联系方式2</td>
+				<td height="50" colspan="2" align="center" id="tec_phone2">&nbsp;</td>
+			</tr>
+		</tbody>
+		<tbody>
+
+			<tr>
+				<td height="40" colspan="7" align="center" style="font-size: 1.5em;">团队成员</td>
+			</tr>
+
+		</tbody>
+		<tbody>
+
+			<tr>
+				<td width="105" height="50" align="center">序号</td>
+				<td width="111" height="50" align="center">姓名</td>
+				<td width="99" height="50" align="center">性别</td>
+				<td width="153" height="50" align="center">学院</td>
+				<td width="136" height="50" align="center">班级</td>
+				<td width="137" height="50" align="center">学号</td>
+				<td width="244" height="50" align="center">联系方式</td>
+			</tr>
+
+		</tbody>
+		<tbody>
+			<tr id="member_1" style="display:none;">
+				<td width="105" height="50" align="center">1</td>
+				<td width="111" height="50" align="center" id="memberName1">&nbsp;</td>
+				<td width="99" height="50" align="center" id="memberGender1">&nbsp;</td>
+				<td width="153" height="50" align="center" id="memberCollege1">&nbsp;</td>
+				<td width="136" height="50" align="center" id="memberClass1">&nbsp;</td>
+				<td width="137" height="50" align="center" id="memberNumber1">&nbsp;</td>
+				<td height="50" align="center" id="memberPhone1">&nbsp;</td>
+			</tr>
+		</tbody>
+		<tbody>
+			<tr id="member_2" style="display:none;">
+				<td width="105" height="50" align="center">2</td>
+				<td width="111" height="50" align="center" id="memberName2">&nbsp;</td>
+				<td width="99" height="50" align="center" id="memberGender2">&nbsp;</td>
+				<td width="153" height="50" align="center" id="memberCollege2">&nbsp;</td>
+				<td width="136" height="50" align="center" id="memberClass2">&nbsp;</td>
+				<td width="137" height="50" align="center" id="memberNumber2">&nbsp;</td>
+				<td height="50" align="center" id="memberPhone2">&nbsp;</td>
+			</tr>
+		</tbody>
+		<tbody>
+			<tr id="member_3" style="display:none;">
+				<td width="105" height="50" align="center">3</td>
+				<td width="111" height="50" align="center" id="memberName3">&nbsp;</td>
+				<td width="99" height="50" align="center" id="memberGender3">&nbsp;</td>
+				<td width="153" height="50" align="center" id="memberCollege3">&nbsp;</td>
+				<td width="136" height="50" align="center" id="memberClass3">&nbsp;</td>
+				<td width="137" height="50" align="center" id="memberNumber3">&nbsp;</td>
+				<td height="50" align="center" id="memberPhone3">&nbsp;</td>
+			</tr>
+		</tbody>
+		<tbody>
+			<tr id="member_4" style="display:none;">
+				<td width="105" height="50" align="center">4</td>
+				<td width="111" height="50" align="center" id="memberName4">&nbsp;</td>
+				<td width="99" height="50" align="center" id="memberGender4">&nbsp;</td>
+				<td width="153" height="50" align="center" id="memberCollege4">&nbsp;</td>
+				<td width="136" height="50" align="center" id="memberClass4">&nbsp;</td>
+				<td width="137" height="50" align="center" id="memberNumber4">&nbsp;</td>
+				<td height="50" align="center" id="memberPhone4">&nbsp;</td>
+			</tr>
+		</tbody>
+		<tbody>
+			<tr id="member_5" style="display:none;">
+				<td width="105" height="50" align="center">5</td>
+				<td width="111" height="50" align="center" id="memberName5">&nbsp;</td>
+				<td width="99" height="50" align="center" id="memberGender5">&nbsp;</td>
+				<td width="153" height="50" align="center" id="memberCollege5">&nbsp;</td>
+				<td width="136" height="50" align="center" id="memberClass5">&nbsp;</td>
+				<td width="137" height="50" align="center" id="memberNumber5">&nbsp;</td>
+				<td height="50" align="center" id="memberPhone5">&nbsp;</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+
+<script>
+	var work = sessionStorage.getItem("work");
+	document.getElementById("title").innerHTML = work;
+	var team = sessionStorage.getItem("team");
+	document.getElementById("team_name").innerHTML = team;
+	var email1 = sessionStorage.getItem("email");
+	document.getElementById("email").innerHTML = email1;
+	var cap = sessionStorage.getItem("cap");
+	document.getElementById("cap_name").innerHTML = cap;
+	var phone1 = sessionStorage.getItem("phone");
+	document.getElementById("phone").innerHTML = phone1;
+	var college = sessionStorage.getItem("college");
+	if (college != '') {
+		if (college == 0) {
+			college = "管理学院"
+		} else if (college == 1) {
+			college = "经法学院"
+		} else if (college == 2) {
+			college = "人工智能与电子商务学院"
+		} else if (college == 3) {
+			college = "人文与艺术设计学院"
+		} else if (college == 4) {
+			college = "外语学院"
+		}
+		document.getElementById("college_name").innerHTML = college;
+
+	}
+	var class1 = sessionStorage.getItem("class");
+	document.getElementById("class_name").innerHTML = class1;
+	var tec1 = sessionStorage.getItem("tec1");
+	document.getElementById("tec_name1").innerHTML = tec1;
+	var tecphone1 = sessionStorage.getItem("tecphone1");
+	document.getElementById("tec_phone1").innerHTML = tecphone1;
+	var tec2 = sessionStorage.getItem("tec2");
+	var tecphone2 = sessionStorage.getItem("tecphone2");
+
+	if (tec2 != '') {
+		$("#tec2tr").show();
+		document.getElementById("tec_name2").innerHTML = tec2;
+		document.getElementById("tec_phone2").innerHTML = tecphone2;
+	}
+
+	function qfh(str) {
+		str = str.replace(/\[|]/g, ''); //去除[]
+		str = str.replace(/\"/g, ""); //出去""
+		str = str.replace(/\s+/g, "");   //去除空格
+		var array = str.split(",")
+		return array;
+	}
+
+	//成员名字
+	var stu_names = sessionStorage.getItem("stu_name")
+	var arraystu_names = qfh(stu_names)
+	//成员性别 
+	var stu_genders = sessionStorage.getItem("stu_gender")
+	var arraystu_genders = qfh(stu_genders)
+	//学院
+	var stu_colleges = sessionStorage.getItem("stu_college")
+	var arraystu_colleges = qfh(stu_colleges)
+	//班级
+	var stu_classes = sessionStorage.getItem("stu_class")
+	var arraystu_classes = qfh(stu_classes)
+	//学号
+	var stu_ids = sessionStorage.getItem("stu_id")
+	var arraystu_ids = qfh(stu_ids)
+	//联系方式
+	var stu_phones = sessionStorage.getItem("stu_phone")
+	var arraystu_phones = qfh(stu_phones)
+	//填充数据
+	if (arraystu_names.length == 1) {
+		$("#member_1").show();
+
+	} else if (arraystu_names.length == 2) {
+		$("#member_1").show();
+		$("#member_2").show();
+
+	} else if (arraystu_names.length == 3) {
+		$("#member_1").show();
+		$("#member_2").show();
+		$("#member_3").show();
+
+	} else if (arraystu_names.length == 4) {
+		$("#member_1").show();
+		$("#member_2").show();
+		$("#member_3").show();
+		$("#member_4").show();
+
+	}
+	else if (arraystu_names.length >= 5) {
+		$("#member_1").show();
+		$("#member_2").show();
+		$("#member_3").show();
+		$("#member_4").show();
+		$("#member_5").show();
+
+	}
+	document.getElementById("memberName1").innerHTML = arraystu_names[0];
+	document.getElementById("memberName2").innerHTML = arraystu_names[1];
+	document.getElementById("memberName3").innerHTML = arraystu_names[2];
+	document.getElementById("memberName4").innerHTML = arraystu_names[3];
+	document.getElementById("memberName5").innerHTML = arraystu_names[4];
+	
+	document.getElementById("memberGender1").innerHTML = arraystu_genders[0];
+	document.getElementById("memberGender2").innerHTML = arraystu_genders[1];
+	document.getElementById("memberGender3").innerHTML = arraystu_genders[2];
+	document.getElementById("memberGender4").innerHTML = arraystu_genders[3];
+	document.getElementById("memberGender5").innerHTML = arraystu_genders[4];
+
+	document.getElementById("memberCollege1").innerHTML = arraystu_colleges[0];
+	document.getElementById("memberCollege2").innerHTML = arraystu_colleges[1];
+	document.getElementById("memberCollege3").innerHTML = arraystu_colleges[2];
+	document.getElementById("memberCollege4").innerHTML = arraystu_colleges[3];
+	document.getElementById("memberCollege5").innerHTML = arraystu_colleges[4];
+
+	document.getElementById("memberClass1").innerHTML = arraystu_classes[0];
+	document.getElementById("memberClass2").innerHTML = arraystu_classes[1];
+	document.getElementById("memberClass3").innerHTML = arraystu_classes[2];
+	document.getElementById("memberClass4").innerHTML = arraystu_classes[3];
+	document.getElementById("memberClass5").innerHTML = arraystu_classes[4];
+
+	document.getElementById("memberNumber1").innerHTML = arraystu_ids[0];
+	document.getElementById("memberNumber2").innerHTML = arraystu_ids[1];
+	document.getElementById("memberNumber3").innerHTML = arraystu_ids[2];
+	document.getElementById("memberNumber4").innerHTML = arraystu_ids[3];
+	document.getElementById("memberNumber5").innerHTML = arraystu_ids[4];
+
+	document.getElementById("memberPhone1").innerHTML = arraystu_phones[0];
+	document.getElementById("memberPhone2").innerHTML = arraystu_phones[1];
+	document.getElementById("memberPhone3").innerHTML = arraystu_phones[2];
+	document.getElementById("memberPhone4").innerHTML = arraystu_phones[3];
+	document.getElementById("memberPhone5").innerHTML = arraystu_phones[4];
+
+
+	
+
+</script>
+
+</html>

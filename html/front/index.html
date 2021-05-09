@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>浙江工商大学杭州商学院2021年大学生电子商务竞赛申报系统</title>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <link href="https://cdn.bootcdn.net/ajax/libs/limonte-sweetalert2/2.2.9/sweetalert2.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="layui/css/layui.css">
+  <link rel="stylesheet" type="text/css" href="css/font-awesome-4.7.0/css/font-awesome.min.css" />
+  <script src="https://cdn.bootcdn.net/ajax/libs/limonte-sweetalert2/2.2.9/sweetalert2.min.js"></script>
+
+  <style>
+    body {
+      padding: 10px;
+    }
+  </style>
+</head>
+
+<body background="img/background.svg">
+  <br /><br />
+  <h3 align="center" style="font-size: 1.9em;font-family: 'microsoft yahei'; font-weight: bold;">
+    浙江工商大学杭州商学院2021年大学生电子商务竞赛申报系统</h3>
+  <br /><br />
+  <hr class="layui-border-blue">
+  <div align="center">
+    <a style="font-size: 1.8em;color: #ADADAD;">项目信息</a>
+  </div>
+  <br /><br /><br />
+  <form class="layui-form" id="upform" action="" lay-filter="first" method="POST" enctype="multipart/form-data">
+    <div class="layui-form-item">
+      <div class="layui-input-block">
+        <input type="text" name="title" id="title" lay-verify="required|title" lay-reqText="作品名不能为空" required
+          placeholder="请输入作品名" autocomplete="off" class="layui-input">
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <div class="layui-input-block">
+        <input type="text" name="team_name" id="team_name" lay-verify="required|title" lay-reqText="团队名不能为空" required
+          placeholder="请输入团队名" autocomplete="off" class="layui-input">
+      </div>
+    </div>
+
+    <div class="layui-form-item">
+
+      <div class="layui-input-block">
+        <input type="email" name="email" id="email" lay-verify="email" required placeholder="请输入邮箱" lay-verType="alert"
+          autocomplete="off" class="layui-input">
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <div class="layui-input-block">
+        <input type="text" name="cap_name" id="cap_name" lay-verify="required|title" lay-reqText="队长名不能为空" required
+          placeholder="请输入队长姓名" autocomplete="off" class="layui-input">
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <div class="layui-input-block">
+        <input type="text" name="cap_id" id="cap_id" lay-verify="required|number" lay-reqText="队长学号不能为空" required
+          placeholder="请输入队长学号" autocomplete="off" class="layui-input">
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <div class="layui-input-block">
+        <input type="tel" name="phone" id="phone" lay-verify="required|number" required placeholder="请输入联系方式"
+          lay-verType="tips" autocomplete="off" class="layui-input">
+      </div>
+    </div>
+    <div class="layui-form-item">
+
+      <div class="layui-input-block">
+        <select name="college_name" lay-filter="interest" id="college_name">
+          <option value="">请选择学院</option>
+          <option value="0">管理学院</option>
+          <option value="1">经法学院</option>
+          <option value="2">人工智能与电子商务学院</option>
+          <option value="3">人文与艺术设计学院</option>
+          <option value="4">外语学院</option>
+        </select>
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <div class="layui-input-block">
+        <input type="text" name="class_name" id="class_name" lay-verify="required|title" lay-reqText="班级名不能为空" required
+          placeholder="请输入班级" autocomplete="off" class="layui-input">
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <div class="layui-input-block">
+        <input type="text" name="tec_name1" id="tec_name1" lay-verify="required|title" lay-reqText="指导老师名不能为空" required
+          placeholder="请输入指导老师1" autocomplete="off" class="layui-input">
+      </div>
+    </div>
+    <div class="layui-form-item">
+
+      <div class="layui-input-block">
+        <input type="tel" name="tec_phone1" id="tec_phone1" lay-verify="required|number" required
+          placeholder="请输入指导老师联系方式" lay-verType="tips" autocomplete="off" class="layui-input">
+      </div>
+    </div>
+
+    <div id="show1" style="display:none">
+      <div class="layui-form-item">
+        <div class="layui-input-block">
+          <input type="text" name="tec_name2" id="tec_name2" lay-reqText="指导老师不能为空" required placeholder="请输入指导老师2"
+            autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+
+        <div class="layui-input-block">
+          <input type="tel" name="tec_phone2" id="tec_phone2" required placeholder="请输入指导老师2联系方式" lay-verType="tips"
+            autocomplete="off" class="layui-input">
+        </div>
+      </div>
+    </div>
+
+
+    <div id="show2" align="center" style="font-size: 0.8em;">
+
+      <button type="button" class="layui-btn layui-btn-normal" id="show">添加更多指导老师</button>
+
+      <br /> <br /> <br /> <br />
+    </div>
+
+    <hr class="layui-border-blue">
+
+    <div align="center">
+      <a style="font-size: 1.8em; color: #ADADAD;">团队成员</a>
+    </div>
+    <br /><br /><br />
+
+    <div align="center">
+      <span id="sdf"></span>
+      <div id="container">
+      </div>
+    </div>
+
+    <br />
+    <div align="center">
+      <a style="font-size: 1.8em; color: #ADADAD;">项目文件上传</a>
+    </div>
+    <br /><br />
+    <div align="center">
+      <div class="layui-upload-drag" id="uploads" align="center">
+        <i class="layui-icon" style="color: #1E9FFF;">&#xe67c;</i>
+        <p>点击上传，或将项目文件拖拽到此处</p>
+      </div>
+    </div>
+    <br /><br />
+    <hr class="layui-border-blue">
+    <br /><br /><br />
+
+
+
+
+    <div class="layui-form-item" align="center">
+      <div class="layui-input-block">
+        <button type="button" class="layui-btn layui-btn-normal" id="qt">立即提交</button>
+        <button class="layui-btn layui-btn-normal" lay-submit="" lay-filter="*" style="display:none" id="sub">立即提交</button>
+        <!-- <button class="layui-btn layui-btn-normal" lay-submit lay-filter="*">立即提交</button> -->
+        <button type="reset" class="layui-btn layui-btn-normal">重置</button>
+        <i class="fa fa-question-circle " data-type="test" id="io"
+          style="font-size: 15px; color: #1E9FFF; margin-left: 20px;"></i>
+
+
+      </div>
+    </div>
+  </form>
+
+  <br><br><br>
+
+
+  <script src="layui/layui.js"></script>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="activeForm.js"></script>
+  <script src="layer/layer.js"></script>
+  <script src="js/jquerysession.js"></script>
+  <script src="js/index.js"></script>
+
+  <script>
+
+    // 根据属性名获取团队成员信息
+    // name: 列名, type: 表单类型，这里是"input"或"select"
+    function get_members_properties(name, type) {
+      let members_properties_list = [];
+      for (let i = 0; i < $(type + "[name=" + name + "]").length; ++i) {
+        members_properties_list.push($(type + "[name=" + name + "]")[i].value);
+      }
+      return members_properties_list;
+    }
+
+    layui.use("layer", function () {
+      var layer = layui.layer;
+      $("#qt").click(function () {
+        sessionStorage.setItem("work", document.getElementById("title").value);
+        sessionStorage.setItem("team", document.getElementById("team_name").value);
+        sessionStorage.setItem("email", document.getElementById("email").value);
+        sessionStorage.setItem("cap", document.getElementById("cap_name").value);
+        sessionStorage.setItem("phone", document.getElementById("phone").value);
+        sessionStorage.setItem("college", document.getElementById("college_name").value);
+        sessionStorage.setItem("class", document.getElementById("class_name").value);
+        sessionStorage.setItem("tec1", document.getElementById("tec_name1").value);
+        sessionStorage.setItem("tecphone1", document.getElementById("tec_phone1").value);
+        sessionStorage.setItem("tec2", document.getElementById("tec_name2").value);
+        sessionStorage.setItem("tecphone2", document.getElementById("tec_phone2").value);
+        // 团队成员信息部分
+        // Session不能储存Object因此先序列化再储存以方便读取时使用
+        stu_name = JSON.stringify(get_members_properties("stu_name", "input"));
+        stu_gender = JSON.stringify(get_members_properties("sex", "select"))
+        stu_college = JSON.stringify(get_members_properties("stu_college", "select"))
+        stu_class = JSON.stringify(get_members_properties("stu_class", "input"))
+        stu_id = JSON.stringify(get_members_properties("stu_id", "input"))
+        stu_phone = JSON.stringify(get_members_properties("stu_phone", "input"))
+        var array = [stu_name, stu_gender, stu_college, stu_class, stu_id, stu_phone]
+
+        sessionStorage.setItem("all", array)
+        sessionStorage.setItem("stu_name", JSON.stringify(get_members_properties("stu_name", "input")));
+        sessionStorage.setItem("stu_gender", JSON.stringify(get_members_properties("sex", "select")));
+        sessionStorage.setItem("stu_college", JSON.stringify(get_members_properties("stu_college", "select")));
+        sessionStorage.setItem("stu_class", JSON.stringify(get_members_properties("stu_class", "input")));
+        sessionStorage.setItem("stu_id", JSON.stringify(get_members_properties("stu_id", "input")));
+        sessionStorage.setItem("stu_phone", JSON.stringify(get_members_properties("stu_phone", "input")));
+        layer.open({
+          type: 2,
+          title: '请点击右上角预览全屏报名信息，并核查是否有误',
+          shadeClose: true,
+          shade: true,
+          maxmin: true, //开启最大化最小化按钮
+          area: ['893px', '600px'],
+          content: './table.html',
+          btn: ['确认无误提交'],//按钮
+          yes: function () {//确定按钮
+            //do something;
+            document.getElementById("sub").click();
+            // layer.close(layer.index);
+			layer.closeAll('iframe');
+          },
+
+        });
+
+	
+			
+		
+
+      });
+
+
+      $("#io").click(function () {
+        layer.msg('本申报系统由易班技术中心 陈永强、毛姜建、叶峰峰开发。使用过程中有问题请及时联系易班技术中心。');
+      });
+
+    });
+  </script>
+
+
+  <!-- <script src="../build/lay/dest/layui.all.js"></script> -->
+  <script type="text/javascript">
+    $('#show').on('click', function () {
+
+
+      $('#show1').show();
+      $('#show2').hide();
+
+
+    })
+  </script>
+
+
+
+  <!-- 上传文件 -->
+  <script>
+    layui.use('upload', function () {
+      var $ = layui.jquery
+        , upload = layui.upload;
+      upload.render({
+        elem: '#uploads'
+        , multiple: true
+        , accept: "file"
+        , url: 'http://127.0.0.1:5000/uploadFile' //改成您自己的上传接口
+        , done: function (res) {
+          if(res.code == 200){
+            layer.msg('上传成功')
+          }else if(res.code== 735){
+            layer.msg('请保证命名格式正确，命名格式为：队长学号+作品名称 例:1841816110易班')
+          }else if(res.code==736){
+            layer.msg('该队长未注册队伍，请先上传团队信息')
+          }
+        }
+      });
+    });
+  </script>
+
+
+
+  <script>
+    layui.use(['form', 'layedit', 'laydate'], function () {
+      var form = layui.form
+        , layer = layui.layer
+        , layedit = layui.layedit
+        , laydate = layui.laydate;
+      //事件监听
+      form.on('select', function (data) {
+        console.log('select: ', this, data);
+      });
+
+      form.on('select(quiz)', function (data) {
+        console.log('select.quiz：', this, data);
+      });
+
+      form.on('select(interest)', function (data) {
+        console.log('select.interest: ', this, data);
+      });
+
+
+
+      form.on('checkbox', function (data) {
+        console.log(this.checked, data.elem.checked);
+      });
+
+      form.on('switch', function (data) {
+        console.log(data);
+      });
+
+      form.on('radio', function (data) {
+        console.log(data);
+      });
+
+      //监听提交
+      form.on('submit(*)', function (data) {
+        console.log(data)
+        // alert(JSON.stringify(data.field));
+        return false;
+      });
+
+    });
+
+  </script>
+
+
+
+  <!-- <script>
+    layui.use('jquery', function () {
+      var $ = layui.jquery;
+      var submit = function () {
+        return false;
+      };
+      $('#test').on('submit', function () {
+        return false
+      });
+   
+    });
+  </script> -->
+  <script>
+    layui.extend({
+      xmSelect: 'xm-select',
+      activeForm: 'activeForm'
+    }).use(['activeForm', 'form', 'jquery'], function () {
+      var form = layui.form
+      var $ = layui.jquery
+      var table_3Inst = new layui.activeForm({
+        el: '#container',
+        disabled: false,
+        columns: [
+          {
+            title: '',
+            type: 'checkbox',
+            field: '',
+          },
+          {
+            title: '姓名',
+            type: 'input',
+            field: 'stu_name',
+          },
+
+          {
+            title: '性别',
+            type: 'select',
+            field: 'sex',
+            required: true,
+            alternative: [{
+              value: '男',
+              name: '男'
+            }, {
+              value: '女',
+              name: '女'
+            }],
+
+          },
+          {
+            title: '学院',
+            type: 'select',
+            field: 'stu_college',
+            required: true,
+            alternative: [{
+              value: '管理学院',
+              name: '管理学院'
+            }, {
+              value: '经法学院',
+              name: '经法学院'
+            }, {
+              value: '人工智能与电子商务学院',
+              name: '人工智能与电子商务学院'
+            },
+            {
+              value: '人文与艺术设计学院',
+              name: '人文与艺术设计学院'
+            },
+            {
+              value: '外语学院',
+              name: '外语学院'
+            }],
+
+          },
+          {
+            title: '班级',
+            type: 'input',
+            field: 'stu_class',
+
+          },
+          {
+            title: '学号',
+            type: 'input',
+            field: 'stu_id',
+
+          },
+
+          {
+            title: '联系方式',
+            type: 'input',
+            field: 'stu_phone',
+          },
+
+        ],
+       data: [{
+         
+           
+                  
+       }],
+
+      },
+      );
+    })
+
+
+
+  </script>
+
+
+
+</body>
+
+</html>
